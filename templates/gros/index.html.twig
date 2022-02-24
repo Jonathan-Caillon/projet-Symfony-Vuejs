@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gros index{% endblock %}
+
+{% block body %}
+    <h1>Gros index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Poids</th>
+                <th>Taille</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gro in gros %}
+            <tr>
+                <td>{{ gro.id }}</td>
+                <td>{{ gro.Poids }}</td>
+                <td>{{ gro.taille }}</td>
+                <td>
+                    <a href="{{ path('gros_show', {'id': gro.id}) }}">show</a>
+                    <a href="{{ path('gros_edit', {'id': gro.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gros_new') }}">Create new</a>
+{% endblock %}

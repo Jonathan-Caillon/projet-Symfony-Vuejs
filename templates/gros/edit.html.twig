@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Gros{% endblock %}
+
+{% block body %}
+    <h1>Edit Gros</h1>
+
+    {{ include('gros/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gros_index') }}">back to list</a>
+
+    {{ include('gros/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gros{% endblock %}
+
+{% block body %}
+    <h1>Gros</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gro.id }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ gro.Poids }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ gro.taille }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gros_index') }}">back to list</a>
+
+    <a href="{{ path('gros_edit', {'id': gro.id}) }}">edit</a>
+
+    {{ include('gros/_delete_form.html.twig') }}
+{% endblock %}
